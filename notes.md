@@ -19,6 +19,15 @@ learning from sensory data.
 
 The raw fitness data recorded by the MetaMotion sensor band, recording gyroscope and accelerometer is in CSV files. Both
 of which are measure on the X, Y, and Z axis, with the accelerometer measured in geforce, and gyroscope in degrees per
-second. Along with the axis vectors, they also have data for the labels epochs (ms), time (system time), and elapsed (
-s). The data was recorded by five separate individuals, including a light set and heavy set of five different strength
+second. Along with the axis vectors, they also have labels for data: epochs (ms), time (system time), and elapsed (
+s) as the name of each file. The data was recorded by five separate individuals, including a light set and heavy set of
+five different strength
 training exercises. Each set for each individual has been recorded into a stand-alone csv file in raw data.
+
+##### Note:
+
+> The data also contains each individuals resting data while waiting to begin a set, sitting/walking between sets etc.
+
+This means, specific files will need to be stitched together for the dataframe and given labels before we can feed them
+to the input for the supervised learning model. The gyroscope data will be fairly larger than accelerometer as it runs
+at a higher frequency, thus being able to record more data per second.
