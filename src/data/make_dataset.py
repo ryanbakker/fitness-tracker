@@ -45,7 +45,7 @@ gyr_set = 1
 for f in files:
     participant = f.split("-")[0].replace(data_path, "")
     label = f.split("-")[1]
-    category = f.split("-")[2].rstrip("123").rstrip("_M etaWear_2019")
+    category = f.split("-")[2].rstrip("123").rstrip("_MetaWear_2019")
 
     df = pd.read_csv(f)
     df["participant"] = participant
@@ -146,9 +146,9 @@ data_merged.columns = [
     "gyr_x",
     "gyr_y",
     "gyr_z",
+    "participant",
     "label",
     "category",
-    "participant",
     "set",
 ]
 
@@ -165,9 +165,9 @@ sampling = {
     "gyr_x": "mean",
     "gyr_y": "mean",
     "gyr_z": "mean",
+    "participant": "last",
     "label": "last",
     "category": "last",
-    "participant": "last",
     "set": "last",
 }
 
